@@ -5,6 +5,7 @@ var styles = require('../styles');
 var UserDetails = require('../components/UserDetails');
 var UserDetailsWrapper = require('../components/UserDetailsWrapper');
 var MainContainer = require('../components/MainContainer');
+var Loading = require('../components/Loading');
 
 function puke (object) {
   return <pre>{JSON.stringify(object, null, ' ')}</pre>
@@ -22,7 +23,7 @@ function StartOver () {
 function Results (props) {
 
     if (props.isLoading) {
-      <p>LOADING</p>
+      return <Loading text="One Moment" speed={100}/>
     }
 
     if (props.scores[0] === props.scores[1]){
